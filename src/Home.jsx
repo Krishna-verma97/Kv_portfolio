@@ -10,47 +10,49 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import TechTimeline from "./pages/TechTimeline";
 import Education from "./pages/Education";
-import kvLogo from "./assets/logo.png"
+import kvLogo from "./assets/logo.png";
+import { useLocation } from "react-router-dom";
+
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+const [isLoading, setIsLoading] = useState(location.pathname === "/");
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500); // splash screen shows for 2.5s
+useEffect(() => {
+  if (location.pathname !== "/") return; // 👈 only trigger splash on home page
 
-    return () => clearTimeout(timer);
-  }, []);
+  const timer = setTimeout(() => {
+    setIsLoading(false);
+  }, 600); // you can adjust the duration here
 
-  if (isLoading) {
-    return (
-      <div className="fixed inset-0 bg-gradient-to-r from-[#0f172a] via-[#1e1e1e] to-[#0f172a] flex flex-col justify-center items-center z-[9999] text-white">
-        {/* 🔄 Small Spinner */}
-        <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-indigo-400 mb-4"></div>
+  return () => clearTimeout(timer);
+}, [location.pathname]);
 
-        {/* 🔷 Logo Styled Like Navbar */}
-        <div className="p-[2px] rounded-full bg-gradient-to-r from-indigo-500 via-pink-500 to-cyan-400 shadow-[0_0_20px_rgba(0,255,255,0.5)] mb-2">
-  <div className="rounded-full overflow-hidden bg-black">
-    <img
-      src={kvLogo}
-      alt="Loading Logo"
-      className="h-10 w-10 object-contain"
-    />
-  </div>
-</div>
+if (isLoading) {
+  return (
+    <div className="fixed inset-0 bg-gradient-to-r from-[#0f172a] via-[#1e1e1e] to-[#0f172a] flex flex-col justify-center items-center z-[9999] text-white">
+      {/* 🔄 Spinner */}
+      <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-indigo-400 mb-4"></div>
 
-
-        {/* 💬 Loading Text */}
-        <p className="text-lg font-semibold text-yellow-100 drop-shadow-[0_0_4px_rgba(250,204,21,0.6)] animate-fadeIn tracking-wide">
-  Entering Dev Mode 🧑‍💻
-</p>
-
-
-
+      {/* 🔷 Logo */}
+      <div className="p-[2px] rounded-full bg-gradient-to-r from-indigo-500 via-pink-500 to-cyan-400 shadow-[0_0_20px_rgba(0,255,255,0.5)] mb-2">
+        <div className="rounded-full overflow-hidden bg-black">
+          <img
+            src={kvLogo}
+            alt="Loading Logo"
+            className="h-10 w-10 object-contain"
+          />
+        </div>
       </div>
-    );
-  }
+
+      {/* 💬 Text */}
+      <p className="text-lg font-semibold text-yellow-100 drop-shadow-[0_0_4px_rgba(250,204,21,0.6)] animate-fadeIn tracking-wide">
+        Entering Dev Mode 🧑‍💻
+      </p>
+    </div>
+  );
+}
+
 
   return (
     <>
