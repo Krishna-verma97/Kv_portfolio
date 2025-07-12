@@ -7,6 +7,7 @@ import User from "../assets/Krishna.webp";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
+import resume from "/Krishna_resume.pdf";
 
 export default function Hero() {
   const particlesInit = useCallback(async (engine) => {
@@ -102,7 +103,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="/Krishna_resume.pdf"
+              href={resume}
               download
               className="relative inline-block px-6 py-2 border border-indigo-600 text-indigo-600 dark:text-white hover:bg-indigo-50 dark:hover:bg-white/10 rounded-xl font-semibold shadow-md transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-indigo-400/40 focus:outline-none focus:ring-2 focus:ring-indigo-400"
             >
