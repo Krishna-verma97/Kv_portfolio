@@ -10,7 +10,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import TechTimeline from "./pages/TechTimeline";
 import Education from "./pages/Education";
-import kvLogo from "../../assets/logo.png"
+import kvLogo from "./assets/logo.png"
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
