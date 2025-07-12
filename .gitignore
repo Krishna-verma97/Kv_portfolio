@@ -1,0 +1,23 @@
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+
+# Build output
+dist/
+.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor and system files
+.DS_Store
+*.local
+*.swp
+
+# VS Code settings (optional)
+.vscode/
