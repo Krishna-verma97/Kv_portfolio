@@ -11,7 +11,8 @@ import { useCallback } from "react";
 
 
 // Instead add this:
-const resume = "/Krishna_resume.pdf";
+const resume = "/Krishna_Verma_Resume.pdf";
+
 
 
 
