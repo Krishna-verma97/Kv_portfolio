@@ -6,10 +6,10 @@ import Tilt from "react-parallax-tilt";
 import confetti from "canvas-confetti";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import project1 from "../assets/project.png"
-import project2 from "../assets/project2.webp"
-import intern from "../assets/internshala.png"
-import cohort from "../assets/codekaro.png"
+import project1 from "../assets/project.png";
+import project2 from "../assets/project2.webp";
+import intern from "../assets/internshala.png";
+import cohort from "../assets/codekaro.png";
 
 const projects = [
   {
@@ -42,9 +42,9 @@ const achievements = [
     link: "https://trainings.internshala.com/view_certificate/8tsjql61eag/f9gbf2b5cos/",
   },
   {
-    title: cohort,
+    title: "Certificate of Completion",
     description: "Successfully completed CodeKaro’s hands-on Full Stack Web Development course, gaining practical knowledge in frontend and backend technologies including HTML, CSS, JavaScript,Tailwind Css, React.js and Firebase through real-time projects",
-    image: "./src/assets/codekaro.png",
+    image: cohort,
     link: "https://codekaro.in/course-certificate/55779-2318",
   },
   
