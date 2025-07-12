@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { MoonStar, Sun } from "lucide-react";
-import kvlogo from "../../assets/kv_logo.png"
+import kvLogo from "../../assets/logo.png"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,7 +80,7 @@ const Navbar = () => {
             <div className="p-[2px] rounded-full bg-gradient-to-r from-indigo-500 via-pink-500 to-cyan-400 group-hover:shadow-[0_0_10px_rgba(0,255,255,0.5)] transition duration-300 ease-in-out">
               <div className="rounded-full overflow-hidden bg-black">
                 <img
-                  src={kvlogo}
+                  src={kvLogo}
                   alt="Krishna Logo"
                   className="h-10 w-10 object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
                 />
