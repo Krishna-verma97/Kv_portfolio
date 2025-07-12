@@ -1,23 +1,25 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Confetti } from "../components/ui/Confetti";
-
+import kvv from "../assets/logo.png"
+import hack from "../assets/buildspace.jpg"
+import hack2 from "../assets/mhacks-9.png"
 // Work Experience Data
 const experiences = [
   {
-    img: "/src/assets/kv_logo.png",
+    img: kvv,
     title: "Added Soon🤞🔥",
     role: "#role",
     duration: "#timeline",
   },
   {
-    img: "/src/assets/kv_logo.png",
+    img: kvv,
     title: "Added Soon🤞🔥",
     role: "#role",
     duration: "#timeline",
   },
   {
-    img: "/src/assets/kv_logo.png",
+    img: kvv,
     title: "Added Soon🤞🔥",
     role: "#role",
     duration: "#timeline",
@@ -31,14 +33,14 @@ const hackathonData = [
     title: "🚀 Added Soon",
     location: "Delhi,India",
     description: "#About Hackthon",
-    image: "/your-image-path1.png",
+    image: hack,
   },
   {
     date: "#Timeline",
     title: "💡Added Soon",
     location: "Delhi,India",
     description: "#About Hackthon",
-    image: "/your-image-path2.png",
+    image: hack2,
   },
 ];
 

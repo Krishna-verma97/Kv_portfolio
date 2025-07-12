@@ -5,21 +5,21 @@ import mpz from "../assets/mpsazamgarh-logo.png";
 
 const educationData = [
   {
-    img: {gpm},
+    img: gpm,
     title: "Government Polytechnic Mau",
     description: "Diploma In Computer Science And Engineering",
     year: "2022 - 2025",
     link: "https://gpmau.com/",
   },
   {
-    img: {gpb},
+    img: gpb,
     title: "Gyan Peethiks Sr. Sec. School",
     description: "Higher/Senior Secondary School (Intermediate)",
     year: "2019 - 2021",
     link: "https://gyanpeethika.com/",
   },
   {
-    img: {mpz},
+    img: mpz,
     title: "Modern Public School",
     description: "Secondary School (High School)",
     year: "2017 - 2019",

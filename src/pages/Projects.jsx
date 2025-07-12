@@ -6,6 +6,10 @@ import Tilt from "react-parallax-tilt";
 import confetti from "canvas-confetti";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import project1 from "../assets/project.png"
+import project2 from "../assets/project2.webp"
+import intern from "../assets/internshala.png"
+import cohort from "../assets/codekaro.png"
 
 const projects = [
   {
@@ -14,7 +18,7 @@ const projects = [
       "A modern,animated personal portfolio built with Html,JavaScript,React,Tailwind CSS and Firebase Dtabase integration.",
     link: "/", // ✅ Hero page link
     github: "https://github.com/Krishna-verma97",
-    image: "./src/assets/project.png",
+    image: project1,
     featured: true,
     techStack: ["React", "Tailwind", "Firebase"]
   },
@@ -24,7 +28,7 @@ const projects = [
       "Built with OpenWeatherMap API and Firebase. Fully responsive.",
     link: "#",
     github: "https://github.com/Krishna-verma97",
-    image: "./src/assets/project2.webp",
+    image: project2,
     featured: false,
     techStack: ["JavaScript", "API", "Firebase"]
   },
@@ -34,11 +38,11 @@ const achievements = [
   {
     title: "Certified of Training",
     description: "Completed Internshala's comprehensive training in Web Development, covering HTML, CSS, JavaScript, Bootstrap, and backend basics. Gained hands-on experience through practical assignments and final projects",
-    image: "./src/assets/internshala.png",
+    image: intern,
     link: "https://trainings.internshala.com/view_certificate/8tsjql61eag/f9gbf2b5cos/",
   },
   {
-    title: "Certificate of Completion",
+    title: cohort,
     description: "Successfully completed CodeKaro’s hands-on Full Stack Web Development course, gaining practical knowledge in frontend and backend technologies including HTML, CSS, JavaScript,Tailwind Css, React.js and Firebase through real-time projects",
     image: "./src/assets/codekaro.png",
     link: "https://codekaro.in/course-certificate/55779-2318",
