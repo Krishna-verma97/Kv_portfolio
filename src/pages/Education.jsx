@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import gpm from "../assets/gpmau.png"
-import gpb from "../assets/gyanballia.png"
-import mpz from "../assets/mpsazamgarh.png"
+import gpm from "../assets/gpmau.png";
+import gpb from "../assets/gyanballia.png";
+import mpz from "../assets/mpsazamgarh-logo.png";
 
 const educationData = [
   {
