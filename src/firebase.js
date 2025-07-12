@@ -1,36 +1,21 @@
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAQGrJjjnx39-gRJX_suVQFYeVCTe-14dA",
-//   authDomain: "krishna-portfolio-fc08d.firebaseapp.com",
-//   projectId: "krishna-portfolio-fc08d",
-//   storageBucket: "krishna-portfolio-fc08d.firebasestorage.app",
-//   messagingSenderId: "968946845585",
-//   appId: "1:968946845585:web:cb8860bb2e058516763c30"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-
-// firebase.js
+// src/firebase.js
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"; // Firestore ke liye import
+import { getFirestore } from "firebase/firestore";
 
+// ✅ Using secure environment variables from .env file
 const firebaseConfig = {
-  apiKey: "AIzaSyAQGrJjjnx39-gRJX_suVQFYeVCTe-14dA",
-  authDomain: "krishna-portfolio-fc08d.firebaseapp.com",
-  projectId: "krishna-portfolio-fc08d",
-  storageBucket: "krishna-portfolio-fc08d.firebasestorage.app",
-  messagingSenderId: "968946845585",
-  appId: "1:968946845585:web:cb8860bb2e058516763c30"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
+// ✅ Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// ✅ Yahi export bhool gaya tha
+// ✅ Initialize Firestore
 const db = getFirestore(app);
+
 export { db };
