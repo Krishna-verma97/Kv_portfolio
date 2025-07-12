@@ -17,7 +17,7 @@ const projects = [
     description:
       "A modern,animated personal portfolio built with Html,JavaScript,React,Tailwind CSS and Firebase Dtabase integration.",
     link: "/", // ✅ Hero page link
-    github: "https://github.com/Krishna-verma97",
+    github: "https://github.com/Krishna-verma97/Kv_portfolio",
     image: project1,
     featured: true,
     techStack: ["React", "Tailwind", "Firebase"]
