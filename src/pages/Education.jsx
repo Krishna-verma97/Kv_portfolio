@@ -1,22 +1,25 @@
 import { motion } from "framer-motion";
+import gpm from "../assets/gpmau.png"
+import gpb from "../assets/gyanballia.png"
+import mpz from "../assets/mpsazamgarh.png"
 
 const educationData = [
   {
-    img: "/src/assets/gpmau.png",
+    img: {gpm},
     title: "Government Polytechnic Mau",
     description: "Diploma In Computer Science And Engineering",
     year: "2022 - 2025",
     link: "https://gpmau.com/",
   },
   {
-    img: "/src/assets/gyanballia.png",
+    img: {gpb},
     title: "Gyan Peethiks Sr. Sec. School",
     description: "Higher/Senior Secondary School (Intermediate)",
     year: "2019 - 2021",
     link: "https://gyanpeethika.com/",
   },
   {
-    img: "/src/assets/mpsazamgarh-logo.png",
+    img: {mpz},
     title: "Modern Public School",
     description: "Secondary School (High School)",
     year: "2017 - 2019",
