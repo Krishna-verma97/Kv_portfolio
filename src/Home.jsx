@@ -23,7 +23,7 @@ useEffect(() => {
 
   const timer = setTimeout(() => {
     setIsLoading(false);
-  }, 1111); // you can adjust the duration here
+  }, 1111); //  adjust the duration here
 
   return () => clearTimeout(timer);
 }, [location.pathname]);
