@@ -6,48 +6,28 @@ import Tilt from "react-parallax-tilt";
 import confetti from "canvas-confetti";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import project1 from "../assets/project.png";
-import project2 from "../assets/project2.webp";
 import intern from "../assets/internshala.png";
 import cohort from "../assets/codekaro.png";
+import { PROJECTS } from "../data/projects";
+import SEO from "../components/seo/SEO";
 
-const projects = [
-  {
-    title: "Portfolio Website",
-    description:
-      "A modern,animated personal portfolio built with Html,JavaScript,React,Tailwind CSS and Firebase Dtabase integration.",
-    link: "/", // ✅ Hero page link
-    github: "https://github.com/Krishna-verma97/Kv_portfolio",
-    image: project1,
-    featured: true,
-    techStack: ["React", "Tailwind", "Firebase"]
-  },
-  {
-    title: "Weather App",
-    description:
-      "Built with OpenWeatherMap API and Firebase. Fully responsive.",
-    link: "#",
-    github: "https://github.com/Krishna-verma97",
-    image: project2,
-    featured: false,
-    techStack: ["JavaScript", "API", "Firebase"]
-  },
-];
+const projects = PROJECTS;
 
 const achievements = [
   {
     title: "Certified of Training",
-    description: "Completed Internshala's comprehensive training in Web Development, covering HTML, CSS, JavaScript, Bootstrap, and backend basics. Gained hands-on experience through practical assignments and final projects",
+    description:
+      "Completed Internshala's comprehensive training in Web Development, covering HTML, CSS, JavaScript, Bootstrap, and backend basics. Gained hands-on experience through practical assignments and final projects",
     image: intern,
     link: "https://trainings.internshala.com/view_certificate/8tsjql61eag/f9gbf2b5cos/",
   },
   {
     title: "Certificate of Completion",
-    description: "Successfully completed CodeKaro’s hands-on Full Stack Web Development course, gaining practical knowledge in frontend and backend technologies including HTML, CSS, JavaScript,Tailwind Css, React.js and Firebase through real-time projects",
+    description:
+      "Successfully completed CodeKaro’s hands-on Full Stack Web Development course, gaining practical knowledge in frontend and backend technologies including HTML, CSS, JavaScript,Tailwind Css, React.js and Firebase through real-time projects",
     image: cohort,
     link: "https://codekaro.in/course-certificate/55779-2318",
   },
-  
 ];
 
 export default function Projects() {
@@ -68,7 +48,7 @@ export default function Projects() {
           });
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (confettiRef.current) observer.observe(confettiRef.current);
@@ -78,7 +58,13 @@ export default function Projects() {
   }, []);
 
   return (
+
     <>
+<SEO
+  title="Projects | Krishna Verma"
+  description="Explore MERN Stack, React and DevOps projects built by Krishna Verma."
+/>
+
       {/* Projects Section */}
       <section className="w-full pt-4 pb-8 px-4 bg-white dark:bg-gray-900 text-black dark:text-white flex justify-center items-start">
         <div className="max-w-5xl w-full">
@@ -118,7 +104,8 @@ export default function Projects() {
                   <div className="absolute inset-0 z-0 bg-gradient-to-br from-transparent to-emerald-200 dark:to-emerald-800 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-xl" />
 
                   <motion.img
-                    src={project.image}
+                    // src={project.image}
+                    src={project.screenshots?.[0]?.src}
                     alt={project.title}
                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -127,11 +114,17 @@ export default function Projects() {
                       <h3 className="text-xl font-semibold mb-2 text-emerald-600 dark:text-emerald-400">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-neutral-700 dark:text-neutral-300">
+                      {/* <p className="text-sm text-neutral-700 dark:text-neutral-300">
                         {project.description}
                       </p>
                       <div className="flex flex-wrap gap-2 mt-3">
-                        {project.techStack.map((tech, tIdx) => (
+                        {project.techStack.map((tech, tIdx) => ( */}
+                        <p className="text-sm text-neutral-700 dark:text-neutral-300">
+  {project.shortDescription}
+</p>
+
+<div className="flex flex-wrap gap-2 mt-3">
+  {(project.specs?.technologies || []).map((tech, tIdx) => (
                           <span
                             key={tIdx}
                             title={`Tech used: ${tech}`}
@@ -152,9 +145,8 @@ export default function Projects() {
                         <FaGithub />
                       </a>
 
-                      {/* ✅ Corrected Link */}
                       <Link
-                        to={project.link}
+                        to={`/projects/${project.slug}`}
                         className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-transform transform hover:scale-125 text-xl"
                       >
                         <FaExternalLinkAlt />
@@ -169,7 +161,7 @@ export default function Projects() {
       </section>
 
       {/* Achievements Section remains unchanged here */}
-       <section
+      <section
         ref={confettiRef}
         className="w-full pt-4 pb-8 px-4 bg-white dark:bg-gray-900 text-black dark:text-white flex justify-center items-start"
       >

@@ -196,3 +196,25 @@
     animation: glowLine 3s linear infinite;
   }
 }
+
+/* Markdown code highlighting uses the existing platform palette. */
+.markdown-content .hljs-keyword,
+.markdown-content .hljs-selector-tag,
+.markdown-content .hljs-literal {
+  color: #c084fc;
+}
+
+.markdown-content .hljs-string,
+.markdown-content .hljs-attr,
+.markdown-content .hljs-title {
+  color: #6ee7b7;
+}
+
+.markdown-content .hljs-comment {
+  color: #9ca3af;
+}
+
+.markdown-content .hljs-number,
+.markdown-content .hljs-built_in {
+  color: #fcd34d;
+}

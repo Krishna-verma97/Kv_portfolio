@@ -1,0 +1,18 @@
+export const knowledgeCategories = [
+  "Linux",
+  "Git",
+  "Docker",
+  "Kubernetes",
+  "Terraform",
+  "AWS",
+  "PowerShell",
+  "Python",
+  "React",
+  "Node.js",
+  "MongoDB",
+  "DevOps",
+  "AI",
+  "LLMs",
+  "System Design",
+  "DSA",
+];

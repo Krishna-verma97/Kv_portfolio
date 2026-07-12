@@ -1,0 +1,169 @@
+/* terminal.css
+   Why this file exists:
+   A few behaviors (cursor blink, custom scrollbar, output fade-in) are not
+   cleanly expressible with Tailwind utility classes alone, and color TOKENS
+   need to live somewhere framework-agnostic so both CSS and inline styles can
+   reference the same values. This file is imported once, by TerminalPage.jsx.
+*/
+
+:root {
+  /* Base surfaces */
+  --term-bg: #0c0c0c;
+  --term-panel: #1e1e1e;
+  --term-header: #232323;
+  --term-border: #2d2d30;
+
+  /* Text */
+  --term-text: #cccccc;
+  --term-text-dim: #8a8a8a;
+  --term-text-bright: #ffffff;
+
+  /* Semantic output colors */
+  --term-success: #3ddc84;
+  --term-error: #f14c4c;
+  --term-warning: #e5c07b;
+  --term-info: #61afef;
+  --term-link: #4fc1ff;
+  --term-accent: #c586c0;
+
+  /* Prompt */
+  --term-prompt: #16c60c;
+
+  --term-radius: 10px;
+  --term-font-mono: 'Cascadia Code', 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+[data-theme='light'] {
+  --term-bg: #fafafa;
+  --term-panel: #ffffff;
+  --term-header: #f0f0f0;
+  --term-border: #e0e0e0;
+
+  --term-text: #1f1f1f;
+  --term-text-dim: #6e6e6e;
+  --term-text-bright: #000000;
+
+  --term-success: #1a8f4c;
+  --term-error: #c8272c;
+  --term-warning: #9a6700;
+  --term-info: #0969da;
+  --term-link: #0969da;
+  --term-accent: #8250df;
+
+  --term-prompt: #1a8f4c;
+}
+
+.kv-terminal {
+  font-family: var(--term-font-mono);
+  background: var(--term-bg);
+  color: var(--term-text);
+  border-radius: var(--term-radius);
+  border: 1px solid var(--term-border);
+  /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35); */
+  box-shadow: 0 25px 70px rgba(0,0,0,.45);
+  /* overflow: visible; */
+  overflow: hidden;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+  /* Responsive height, one value per breakpoint. This only applies when the
+     consumer (TerminalPage -> TerminalLayout) doesn't pass an explicit
+     `height` prop — an inline style height always wins over these rules. */
+  height: calc(100vh - 120px);
+}
+
+@media (min-width: 640px) {
+  .kv-terminal {
+    height: calc(100vh - 140px);
+  }
+}
+
+@media (min-width: 768px) {
+  .kv-terminal {
+    height: calc(100vh - 160px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .kv-terminal {
+    height: calc(100vh - 180px);
+  }
+}
+
+.kv-terminal-body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--term-border) transparent;
+}
+
+.kv-terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.kv-terminal-body::-webkit-scrollbar-thumb {
+  background-color: var(--term-border);
+  border-radius: 8px;
+}
+
+.kv-terminal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.kv-terminal-body::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+.kv-terminal-body::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+.kv-terminal-body::-webkit-scrollbar-thumb{
+
+    background:#333;
+
+    border-radius:20px;
+
+}
+
+.kv-terminal-body::-webkit-scrollbar-thumb:hover{
+
+    background:#555;
+
+}
+
+/* Cursor blink */
+.kv-cursor {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.1em;
+  background: var(--term-text-bright);
+  vertical-align: text-bottom;
+  animation: kv-blink 1s steps(1) infinite;
+}
+
+@keyframes kv-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Output fade-in */
+.kv-output-block {
+  animation: kv-fade-in 160ms ease-out;
+}
+
+@keyframes kv-fade-in {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kv-cursor {
+    animation: none;
+    opacity: 1;
+  }
+  .kv-output-block {
+    animation: none;
+  }
+}

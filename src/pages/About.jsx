@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
 import DevJourney from "../components/ui/DevJourney";
 import FunFacts from "../components/ui/FunFacts";
+import SEO from "../components/seo/SEO";
 
 export default function About() {
   return (
+    <>
+  <SEO
+  title="About | Krishna Verma"
+  description="Learn more about Krishna Verma, Full Stack Developer, MERN enthusiast and DevOps learner."
+/>
+
     <section
       id="about"
       className="min-h-screen px-2 py-10 bg-white dark:bg-gray-900 flex items-start justify-center"
@@ -76,5 +83,6 @@ export default function About() {
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -9,6 +9,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import toast, { Toaster } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
+import SEO from "../components/seo/SEO";
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -28,8 +29,7 @@ export default function Contact() {
     setIsSubmitting(true); // ✅ Start loading
 
     try {
-      console.log("Form values:", form);
-      console.log("FormRef:", formRef.current);
+      
 
       await addDoc(collection(db, "contacts"), form);
 
@@ -54,6 +54,11 @@ export default function Contact() {
   };
 
   return (
+    <>
+    <SEO
+  title="Contact | Krishna Verma"
+  description="Get in touch with Krishna Verma for freelance work, collaborations and opportunities."
+/>
     <section className="relative w-full bg-white dark:bg-gray-900 text-black dark:text-white py-20 px-4 pb-32 flex justify-center items-center overflow-hidden">
       <Toaster position="top-center" />
 
@@ -212,5 +217,6 @@ export default function Contact() {
         </form>
       </motion.div>
     </section>
+    </>
   );
 }
