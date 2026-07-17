@@ -40,8 +40,8 @@ export default function FloatingTerminalButton({
 
       md:top-auto
       md:left-auto
-      md:bottom-10
-      md:right-10
+      md:bottom-[90px]
+      md:right-6
 
       ${
         visible

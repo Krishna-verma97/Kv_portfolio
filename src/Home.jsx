@@ -28,7 +28,7 @@ import Terminal from "./pages/Terminal";
 import useTerminalShortcut from "./hooks/useTerminalShortcut";
 import useTerminalKeyword from "./hooks/useTerminalKeyword";
 import FloatingTerminalButton from "./components/FloatingTerminalButton";
-
+import VirtualKrishna from "./components/VirtualKrishna";
 
 
 function App() {
@@ -129,6 +129,7 @@ function App() {
 
           {/* ✅ Footer */}
           <Footer />
+          <VirtualKrishna />
         </div>
         <GlobalSearchPalette
           isOpen={isSearchOpen}
