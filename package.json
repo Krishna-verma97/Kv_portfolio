@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@google/generative-ai": "^0.24.1",
     "@radix-ui/react-slot": "^1.2.3",
     "@types/canvas-confetti": "^1.9.0",
     "buffer": "^6.0.3",

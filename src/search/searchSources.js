@@ -1,6 +1,7 @@
 import { PROJECT_SEARCH_DOCUMENTS } from "../data/projects";
 import { loadKnowledgeArticles } from "../utils/knowledgeContent";
 import { loadBlogArticles } from "../utils/blogContent";
+import { AI_SEARCH_DOCUMENTS } from "../data/ai";
 
 export async function loadSearchSources() {
   const [knowledgeArticles, blogArticles] = await Promise.all([
@@ -9,6 +10,7 @@ export async function loadSearchSources() {
   ]);
 
   return [
+    ...AI_SEARCH_DOCUMENTS,
     ...PROJECT_SEARCH_DOCUMENTS,
 
     ...knowledgeArticles.map((article) => ({

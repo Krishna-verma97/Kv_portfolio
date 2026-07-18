@@ -6,7 +6,7 @@ const toSearchResult = ({ document, score }) => {
   const { searchTokens, ...article } = document;
   return { ...article, score };
 };
-
+ 
 /**
  * Local engine adapter. Its `search` contract can be mirrored by Algolia,
  * Meilisearch, Elastic, or vector-search adapters without changing UI code.

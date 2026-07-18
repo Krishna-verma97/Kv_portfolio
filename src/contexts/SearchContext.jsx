@@ -28,9 +28,9 @@ export function SearchProvider({ children }) {
   );
 
 
-if (results.length) {
-  console.log(results[0]);
-}
+// if (results.length) {
+//   console.log(results[0]);
+// }
 
   return (
     <SearchContext.Provider value={value}>{children}</SearchContext.Provider>
