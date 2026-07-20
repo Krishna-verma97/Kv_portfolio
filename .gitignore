@@ -21,3 +21,5 @@ pnpm-debug.log*
 
 # VS Code settings (optional)
 .vscode/
+.vercel
+.env*

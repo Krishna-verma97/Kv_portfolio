@@ -5,5 +5,8 @@ export function formatContext(results) {
     category: doc.category,
     description: doc.description,
     content: doc.content,
+    url: doc.url,
+    slug: doc.slug,
+    id: doc.id,
   }));
 }

@@ -24,6 +24,7 @@ import { createReadableDocument } from "../../ai/documentFormatter";
 export const AI_SEARCH_DOCUMENTS = [
   {
     slug: "about-krishna",
+    url: "/about",
     title: "About Krishna Verma",
     source: "Profile",
     category: "About",
@@ -42,6 +43,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "current-learning",
+    url: "/about",
     title: "Current Learning",
     source: "Profile",
     category: "Learning",
@@ -56,6 +58,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "engineering-toolbox",
+    url: "/about",
     title: "Engineering Toolbox",
     source: "Profile",
     category: "Toolbox",
@@ -70,6 +73,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "engineering-timeline",
+    url: "/timeline",
     title: "Engineering Timeline",
     source: "Profile",
     category: "Timeline",
@@ -84,6 +88,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "engineering-work",
+     url: "/experience",
     title: "Engineering Work",
     source: "Profile",
     category: "Experience",
@@ -98,6 +103,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "certifications",
+    url: "/about",
     title: "Certifications",
     source: "Profile",
     category: "Certifications",
@@ -112,6 +118,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "books",
+    url: "/about",
     title: "Books",
     source: "Profile",
     category: "Books",
@@ -126,6 +133,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "system-information",
+    url: "/about",
     title: "System Information",
     source: "Profile",
     category: "System",
@@ -140,6 +148,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "github",
+    url: "/about",
     title: "GitHub",
     source: "Profile",
     category: "GitHub",
@@ -154,6 +163,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "dashboard",
+    url: "/about",
     title: "Dashboard Statistics",
     source: "Profile",
     category: "Dashboard",
@@ -168,6 +178,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "roadmap",
+    url: "/about",
     title: "Engineering Roadmap",
     source: "Profile",
     category: "Roadmap",
@@ -182,6 +193,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "version",
+    url: "/about",
     title: "Platform Version",
     source: "Profile",
     category: "Platform",
@@ -196,6 +208,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "visitor-statistics",
+    url: "/about",
     title: "Visitor Statistics",
     source: "Profile",
     category: "Visitors",
@@ -210,6 +223,7 @@ export const AI_SEARCH_DOCUMENTS = [
 
   {
     slug: "contact",
+    url: "/about",
     title: "Contact Information",
     source: "Profile",
     category: "Contact",

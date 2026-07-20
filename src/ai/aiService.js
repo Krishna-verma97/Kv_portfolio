@@ -1,5 +1,5 @@
 import { retrieveContext } from "./retriever";
-import { model } from "./gemini";
+// import { model } from "./gemini";
 import { buildPrompt } from "./promptBuilder";
 import { addConversation } from "./memory";
 
@@ -15,17 +15,35 @@ export async function getAIResponse(message) {
     // console.log("========== STEP 4 ==========");
 // console.log("Calling Gemini...");
 
-    const result = await model.generateContent(prompt);
+    // const result = await model.generateContent(prompt);
     // console.log("Gemini call completed");
 
-    const response = await result.response;
+    // const response = await result.response;
 
     // const reply = response.text();
-    const reply = response.text().trim();
+    // const reply = response.text().trim();
 
     // console.log("Gemini Response:", reply);
 
     // addConversation(message, reply);
+
+    const apiResponse = await fetch("/api/chat", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    prompt,
+  }),
+});
+
+if (!apiResponse.ok) {
+  throw new Error("Failed to contact AI server");
+}
+
+const data = await apiResponse.json();
+
+const reply = data.reply;
     addConversation("user", message);
 addConversation("assistant", reply);
 

@@ -19,14 +19,14 @@ class KnowledgeStore {
   }
 
   async search(query) {
-  await this.initialize();
+    await this.initialize();
 
-  if (!query || !query.trim()) {
-    return [];
+    if (!query || !query.trim()) {
+      return [];
+    }
+
+    return this.engine.search(query);
   }
-
-  return this.engine.search(query);
-}
 
   async getDocuments() {
     await this.initialize();
